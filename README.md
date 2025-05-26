@@ -26,8 +26,8 @@ This simulator aims to mimic the behavior of physical optical components used in
   - Basic tools like beam splitters, couplers, and fiber optic cables.
 
 - **Polarimetry**  
-  - Polarimeter with calculation of **Stokes parameters** for polarization state analysis.  
-  - (Considering separating this into its own module.)
+  - Polarimeter with calculation of **Stokes parameters** for polarization state analysis.
+  - Poincare Sphere  
 
 ### Mathematical Modeling
 
