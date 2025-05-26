@@ -43,6 +43,6 @@ Install dependencies with:
 pip install -r requirements.txt
 ```
 ## Licensing
-This project is licensed under the MIT License for visibility and learning purposes only.
+🚫 This code is for demonstration and review purposes only.
 Please **do not use or integrate** this code into other projects — personal or commercial — without explicit permission.
 You’re welcome to view the code, suggest improvements, or discuss it.
