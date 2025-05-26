@@ -41,7 +41,7 @@ Install dependencies with:
 
 ```bash
 pip install -r requirements.txt
-
+```
 ## Licensing
 This project is licensed under the MIT License for visibility and learning purposes only.
 Please **do not use or integrate** this code into other projects — personal or commercial — without explicit permission.
