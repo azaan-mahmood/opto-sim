@@ -1,6 +1,4 @@
-
-
-# # opto-sim: Quantum Optical Simulator for BB84 Protocol (Physical Abstraction Layer)
+## opto-sim: Quantum Optical Simulator for BB84 Protocol (Physical Abstraction Layer)
 
 This is an early-stage simulator for exploring the **BB84 quantum key distribution (QKD)** protocol at the **physical abstraction layer**, using optical components modeled with mathematical accuracy based on real-world research (within computational and practical limits). .
 
@@ -43,3 +41,8 @@ Install dependencies with:
 
 ```bash
 pip install -r requirements.txt
+
+## Licensing
+This project is licensed under the MIT License for visibility and learning purposes only.
+Please **do not use or integrate** this code into other projects — personal or commercial — without explicit permission.
+You’re welcome to view the code, suggest improvements, or discuss it.
