@@ -1,8 +1,8 @@
 import numpy as np
-
+from typing import Dict
 
 class PhaseModulator:
-    def __init__(self, crystal_cut='X', modulation="DC", params=None):
+    def __init__(self, crystal_cut='X', modulation="DC", params=None) -> None:
         """
         Initialize a Phase Modulator using the Pockels effect in LiNbO3.
 
@@ -76,7 +76,7 @@ class PhaseModulator:
     def __repr__(self):
         return f"PhaseModulator(cut={self.crystal_cut}, modulation={self.modulation}, Vpi={self.Vpi:.2f} V)"
 
-    def get_vpi(self):
+    def get_vpi(self)->float:
         """
         Gets half-angle voltage of the modulator
         :return: Voltage Vπ
@@ -102,10 +102,10 @@ class PhaseModulator:
             return (np.pi * V) / self.__Vpi
 
     @property
-    def Vpi(self):
+    def Vpi(self)->float:
         return self.__Vpi
 
-    def modulate(self, E_field, V):
+    def modulate(self, E_field: np.ndarray, V:float)->np.ndarray:
         """
         Modulate the E_field depending on Modulation Type
         :param E_field:
