@@ -1,4 +1,4 @@
-def plot_field(E, frequency, title):
+def plot_field(E, frequency, title)->None:
     Ex = np.real(E[:, 0])
     Ey = np.real(E[:, 1])
 
