@@ -6,7 +6,7 @@ from matplotlib.patches import Ellipse
 import cmath
 
 
-def polarimeter(E:np.Array, component='r', title="Polarization Ellipse")->None:
+def polarimeter(E:np.ndarray, component:str='r', title:str="Polarization Ellipse")->None:
     """
     Plot the polarization ellipse with an arrow indicating handedness.
 
