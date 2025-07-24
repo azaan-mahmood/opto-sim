@@ -1,15 +1,14 @@
 ## opto-sim: A Physics-Based Optical Simulation Framework for QKD Systems
 
-opto-sim is a modular Python simulation engine for modeling real-world optical components in quantum key distribution (QKD) systems — particularly the BB84 protocol. It focuses on numerical simulation, Stokes vector polarization modeling, and physically accurate component behavior (phase modulators, lasers, APDs, fiber, etc.).
-
-⚙️ Built as a backend simulation framework, not a GUI — with emphasis on modular design, physics fidelity, and scientific interpretability. This aligns with R&D workflows in tools like HFSS, Lumerical, or SIwave.
+**opto-sim** is a modular headless Python library for simulating real-world optical systems at a backend level. It models components like lasers, LiNbO₃ phase modulators, beam splitters, fiber cables, and APDs, using **numerical methods** and **Stokes vector polarization analysis**. Think of it as a lightweight, scriptable backend akin to what powers tools like HFSS, Lumerical, or SIwave—minus the GUI.
 
 **Work in Progress**  
 This project is under active development and not production-ready, but reflects:
 
 - A strong interest in engineering simulation
 - Hands-on application of numerical methods to physical systems
-- A backend-first approach suitable for scripting, automation, and scientific use
+- A **backend-first** approach suitable for scripting, automation, and scientific use
+- Emphasis on **physics-first modeling**, internal APIs, and extendability.
 
 ## Project Overview
 
