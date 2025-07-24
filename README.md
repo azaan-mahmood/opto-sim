@@ -78,13 +78,16 @@ S0 = 0.910
 S1 = 0.000
 S2 = -0.707
 S3 = -0.707
-
-
+```
+![alt text](https://github.com/azaan-mahmood/opto-sim/raw/master/src/common/images/Laser_Out.png "Laser Output")
+```output
 S0 = 0.910
 S1 = 0.000
 S2 = 0.951
 S3 = 0.309
 ```
+![alt text](https://github.com/azaan-mahmood/opto-sim/raw/master/src/common/images/PM_Out.png "Phase Modulator Output")
+
 ## Dependencies
 
 - `numpy`
