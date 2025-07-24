@@ -6,9 +6,9 @@ opto-sim is a modular Python simulation engine for modeling real-world optical c
 **Work in Progress**  
 This project is under active development and not production-ready, but reflects:
 
--  A strong interest in engineering simulation
--  Hands-on application of numerical methods to physical systems
--  A backend-first approach suitable for scripting, automation, and scientific use
+- A strong interest in engineering simulation
+- Hands-on application of numerical methods to physical systems
+- A backend-first approach suitable for scripting, automation, and scientific use
 
 ## Project Overview
 
@@ -34,7 +34,7 @@ This simulator aims to mimic the behavior of physical optical components used in
   - Poincare Sphere
 
 - **Fiber Cable**
-  - 	Simulates fiber transmission, optional dispersion modeling
+  - Simulates fiber transmission, optional dispersion modeling
 
 ### Mathematical Modeling
 
@@ -79,14 +79,14 @@ S1 = 0.000
 S2 = -0.707
 S3 = -0.707
 ```
-![alt text](https://github.com/azaan-mahmood/opto-sim/raw/master/src/common/images/Laser_Out.png "Laser Output")
+![Laser Output](https://github.com/azaan-mahmood/opto-sim/blob/main/src/common/images/Laser_Out.png "Laser Output")
 ```output
 S0 = 0.910
 S1 = 0.000
 S2 = 0.951
 S3 = 0.309
 ```
-![alt text](https://github.com/azaan-mahmood/opto-sim/raw/master/src/common/images/PM_Out.png "Phase Modulator Output")
+![PM Output](https://github.com/azaan-mahmood/opto-sim/blob/main/src/common/images/PM_Out.png "Phase Modulator Output")
 
 ## Dependencies
 
@@ -99,7 +99,8 @@ Install dependencies with:
 ```bash
 pip install -r requirements.txt
 ```
-## Licensing
-🚫 This code is for demonstration and review purposes only.
-Please **do not use or integrate** this code into other projects — personal or commercial — without explicit permission.
-You’re welcome to view the code, suggest improvements, or discuss it.
+## Licensing and Usage
+🚫 This simulator is intended for demonstration and research purposes only. Please contact me for permission before using in personal research/projects or commercial projects.
+
+## Contact ##
+- Feel free to reach out via GitHub issues or messages if you’re curious about the project, want to collaborate.
