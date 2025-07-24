@@ -1,9 +1,14 @@
-## opto-sim: Quantum Optical Simulator for BB84 Protocol (Physical Abstraction Layer)
+## opto-sim: A Physics-Based Optical Simulation Framework for QKD Systems
 
-This is an early-stage simulator for exploring the **BB84 quantum key distribution (QKD)** protocol at the **physical abstraction layer**, using optical components modeled with mathematical accuracy based on real-world research (within computational and practical limits). .
+opto-sim is a modular Python simulation engine for modeling real-world optical components in quantum key distribution (QKD) systems — particularly the BB84 protocol. It focuses on numerical simulation, Stokes vector polarization modeling, and physically accurate component behavior (phase modulators, lasers, APDs, fiber, etc.).
+⚙️ Built as a backend simulation framework, not a GUI — with emphasis on modular design, physics fidelity, and scientific interpretability. This aligns with R&D workflows in tools like HFSS, Lumerical, or SIwave.
 
 **Work in Progress**  
-This project is in active development and not yet production-ready. However, it serves as a showcase of my interest in quantum technologies and my focus on modeling real-world optical phenomena in Python.
+This project is under active development and not production-ready, but reflects:
+
+-  A strong interest in engineering simulation
+-  Hands-on application of numerical methods to physical systems
+-  A backend-first approach suitable for scripting, automation, and scientific use
 
 ## Project Overview
 
@@ -21,16 +26,65 @@ This simulator aims to mimic the behavior of physical optical components used in
   - Models include shot noise, thermal noise, and random Gaussian/Poisson noise.
 
 - **Optical Components**  
-  - Basic tools like beam splitters, couplers, and fiber optic cables.
+  - Basic tools like beam splitters, couplers, etc
 
-- **Polarimetry**  
-  - Polarimeter with calculation of **Stokes parameters** for polarization state analysis.
-  - Poincare Sphere  
+- **Visualization**  
+  - Polarimetry
+  - Calculation of **Stokes parameters** for polarization state analysis.
+  - Poincare Sphere
+
+- **Fiber Cable**
+  - 	Simulates fiber transmission, optional dispersion modeling
 
 ### Mathematical Modeling
 
 All models aim to closely reflect published experimental setups and component behaviors found in academic literature. While accuracy is a priority, simplifications are made when necessary to keep computations tractable.
 
+## Technical Highlights
+- Physics-first architecture: Built from experimental papers and known equations
+- Modular backend API: Easily compose system-level simulations
+- Pure Python + NumPy stack
+- Runs in Jupyter/Colab with reproducible outputs and examples
+- Output includes:
+  - Stokes vector breakdown
+  - Cosine similarity across transmission
+  - Realistic phase and polarization transitions
+
+## Sample Use Case
+```python
+from src.opto_eq import PhaseModulator
+from src.lasers import sslaser as laser
+from src.viewers.stokes import compute_stokes_parameters
+from src.viewers import polarimeter
+source = laser.SolidStateLaser(
+    wavelength=1550e-9,  # Laser wavelength
+    polarization_azimuth=np.pi,  # 45° polarization
+    polarization_ellipticity=np.pi/4,
+    power_dbm=-5,  # arbitrary power unit
+    frequency=5e6
+)
+E_field = source.get_electric_field(normalize=False, over_period=True)
+S0, S1, S2, S3 = compute_stokes_parameters(E_field)
+print(f"S0 = {S0:.3f}\nS1 = {S1:.3f}\nS2 = {S2:.3f}\nS3 = {S3:.3f}")
+polarimeter(E_field, title=f"Laser Output")
+pm = PhaseModulator(crystal_cut='X', modulation='DC')
+E_modulated = pm.modulate(E_field, V=3.3)
+S0, S1, S2, S3 = compute_stokes_parameters(E_modulated)
+print(f"S0 = {S0:.3f}\nS1 = {S1:.3f}\nS2 = {S2:.3f}\nS3 = {S3:.3f}")
+polarimeter(E_modulated, title=f"Phase Modulator Output")
+```
+```output
+S0 = 0.910
+S1 = 0.000
+S2 = -0.707
+S3 = -0.707
+
+
+S0 = 0.910
+S1 = 0.000
+S2 = 0.951
+S3 = 0.309
+```
 ## Dependencies
 
 - `numpy`
