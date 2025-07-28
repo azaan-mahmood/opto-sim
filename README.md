@@ -105,4 +105,4 @@ pip install -r requirements.txt
 🚫 This simulator is intended for demonstration and research purposes only. Please contact me for permission before using in personal research/projects or commercial projects.
 
 ## Contact ##
-- Feel free to reach out via GitHub issues or messages if you’re curious about the project, want to collaborate.
+- Feel free to reach out via GitHub issues or messages if you’re curious about the project and want to collaborate.
